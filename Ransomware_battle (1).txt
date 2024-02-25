@@ -1,0 +1,43 @@
+Ransomware battle
+
+Detectorul
+Fiecare echipă dezvoltă un detector de ransomware. Acesta trebuie să detecteze, în primă fază, un simulator de ransomware. Este foarte important ca detectorul să nu dea alarme false.
+
+Organizatorii pun la dispoziție un sdk de interfațare cu sistemul de operare pe baza căruia se dezovltă detectorul de ransomware. Detectorul trebuie să respecte instrucțiunile de integrare.
+
+Accentul se pune pe analiza operațiilor pe fișierele criptate cât și pe analiza în sine a conținutului. Evaluarea finală a detectorului include simulatorul, aplicațiile ransomware dezvoltate de echipe dar și o suită de aplicații curate pentru a valida robustețea algoritmilor.
+
+Ransomware
+Cu experiența obținută dezvoltând detectorul de ransomware, fiecare echipă dezvoltă câte un ransomware care va fi testat cu fiecare detector de ransomware în parte.
+
+Aplicația ransomware criptează fișierele într-o formă ireversibilă. Conținutul nu poate fi refăcut fără un secret, dar conținutul trebuie refăcut integral folosind secretul.
+
+Accentul se pune pe algoritm și operații cu fișiere, nu pe interacțiunea cu sistemul de operare.
+
+Nu sunt obiectul acestei teme alte metode folosite de ransomware, cum ar fi: ascunderea secretului, transmiterea lui obfuscată pe rețea, incapacitarea detectoarelor terțe prin terminare de procese, găsirea unei metode nedetectate de infiltrare în sistem, ș.a.m.d.
+
+Modul de lucru
+Organizatorul pune la dispoziție mașini virtuale. Acestea vor fi copiate prin rețea. Imaginile conțin deja: sdkul de interfațăre cu sistemul de operare, instrucțiuni de folosire și un simulator cu 11 aplicații ransomware și 2 aplicații curate.
+
+Echipele dezvoltă în ce mod aleg, dar la final trebuie să configureze o copie a mașinii virtuale cu detectorul funcțional. O vor trimite pe rețea către un server unde se face evaluarea.
+
+Evaluarea se face cu aplicații, fișiere și setup similare celor de test. De asemenea, în evaluare intră și aplicațiile ransomware competitoare.
+
+Evaluare
+Detectorul: Se punctează fiecare simulator de ransomware sau ransomware competitor detectat. Se depunctează fiecare alarmă falsă, fără să conteze sursa acesteia. Ponderea unei alarme false este mai mare decât cea a unei detecții.
+
+Ransomware: Se punctează fiecare execuție care criptează tot testbedul și trece neobservat de detectorul competitor.
+
+Sunt descalificate aplicațiile ransomware care:
+- nu respectă intrucțiunile de rulare și prin urmare nu pot fi executați.
+- nu respectă criptarea ireversibilă cu cheie, iar apoi conținutul să poată fi restaurat folosind cheia.
+- nu criptează tot testbedul.
+- nu criptează tot fișierul.
+
+Sunt descalificate detectoarele care:
+- nu se integrează corect cu sdkul oferit și prin urmare nu pot fi executate.
+- alterează sistemul de operare la runtime.
+
+Sunt depunctate prin scăderea a 50% din punctaj oricare:
+- ransomware care alterează sistemul de operare sau lucrează cu altceva în afară de conținutul directorului pe care trebuie să îl cripteze.
+- rezolvare care încearcă să evite problema de bază și se axează pe trucuri simple.
